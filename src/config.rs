@@ -238,8 +238,8 @@ impl Config {
         }
         if !(256..=8192).contains(&self.width)
             || !(144..=8192).contains(&self.height)
-            || self.width % 2 != 0
-            || self.height % 2 != 0
+            || !self.width.is_multiple_of(2)
+            || !self.height.is_multiple_of(2)
         {
             bail!("Use even canvas dimensions within 256×144 and 8192×8192")
         }

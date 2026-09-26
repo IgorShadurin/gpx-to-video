@@ -177,7 +177,7 @@ fn transparent_render_is_bounded_and_bilingual() {
             .full_frame(&t, t.at(t.start() + 50.).as_ref(), &mut m)
             .unwrap();
         assert_eq!(&p.data()[0..4], &[0, 0, 0, 0]);
-        let alpha: Vec<_> = p.data().chunks_exact(4).map(|p| p[3]).collect();
+        let alpha: Vec<_> = p.data().as_chunks::<4>().0.iter().map(|p| p[3]).collect();
         assert!(alpha.contains(&255));
         assert!(alpha.iter().any(|a| *a > 0 && *a < 255));
         assert!(alpha.iter().filter(|a| **a == 0).count() > alpha.len() / 2);

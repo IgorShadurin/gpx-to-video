@@ -547,7 +547,7 @@ pub fn render_clip(
             }
             let mut frame = renderer.frame(track, sample.as_ref(), maps)?;
             // tiny-skia stores premultiplied RGBA; FFmpeg/alpha exports receive straight RGBA.
-            for pixel in frame.data_mut().chunks_exact_mut(4) {
+            for pixel in frame.data_mut().as_chunks_mut::<4>().0 {
                 let a = pixel[3] as u32;
                 if a > 0 && a < 255 {
                     for c in &mut pixel[..3] {
