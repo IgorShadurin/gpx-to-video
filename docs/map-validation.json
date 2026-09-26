@@ -1,0 +1,10 @@
+{
+  "fixture": "synthetic-ride.gpx, public London park area",
+  "cached_cells": 9,
+  "cached_bytes": 7151486,
+  "offline_preview_seconds": 0.27127266698516905,
+  "repeat_png_identical": true,
+  "cache_files_unchanged": true,
+  "repeat_network_requests": 0,
+  "notes": "First downloads encountered transient public-server errors; retries retained completed cells. Final completion used the official Overpass endpoint."
+}

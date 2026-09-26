@@ -1,0 +1,13 @@
+{
+  "canvas": [
+    3840,
+    2160
+  ],
+  "encoder": "h264_videotoolbox",
+  "duration_seconds": 4.0,
+  "render_wall_seconds": 3.025092958,
+  "speed_x": 1.3222734162339747,
+  "map_source": "osm",
+  "missing_gps_frames": 0,
+  "overlay_fps": 15.0
+}

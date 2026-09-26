@@ -1,0 +1,48 @@
+{
+  "synthetic_only": true,
+  "platform_tested": "darwin",
+  "machine_class": "Apple M1 Max",
+  "checks": [
+    "4K H.264 30fps",
+    "4K HEVC 10-bit 60000/1001fps",
+    "same codecs/dimensions/frame timestamps",
+    "compressed audio unchanged",
+    "directory and spaces in filenames",
+    "GPX and CSV",
+    "4K VP9 alpha",
+    "4K ProRes 4444 alpha",
+    "missing capture time rejected",
+    "explicit start and negative offset",
+    "overwrite protection",
+    "per-clip start/offset/drift",
+    "software H.264",
+    "HDR rejection"
+  ],
+  "renders": [
+    {
+      "duration_seconds": 4.0,
+      "render_wall_seconds": 2.931225292,
+      "speed_x": 1.3646170462969653,
+      "encoder": "h264_videotoolbox",
+      "canvas": [
+        3840,
+        2160
+      ],
+      "overlay_fps": 15.0,
+      "missing_gps_frames": 0
+    },
+    {
+      "duration_seconds": 4.004,
+      "render_wall_seconds": 3.451333041,
+      "speed_x": 1.160131448467769,
+      "encoder": "hevc_videotoolbox",
+      "canvas": [
+        3840,
+        2160
+      ],
+      "overlay_fps": 15.0,
+      "missing_gps_frames": 0
+    }
+  ],
+  "scratch_directory": "tmp/smoke/1790460652950464000"
+}

@@ -1,0 +1,71 @@
+theme = "bicycle"
+language = "ru"
+overlay_fps = 15.0
+max_gap_seconds = 5.0
+width = 3840
+height = 2160
+speed_max_kmh = 60.0
+distance_decimals = 1
+total_decimals = 0
+total_round_up = true
+show_coordinates = true
+show_elevation = true
+show_distance = true
+show_location = true
+show_accuracy = false
+map_zoom = 15
+map_tile_pixels = 512
+map_source = "osm"
+max_download_tiles = 128
+overpass_url = "https://overpass-api.de/api/interpreter"
+road_snap_m = 30.0
+place_radius_m = 3000.0
+
+[gauge]
+enabled = true
+x = 0.035
+y = 0.65
+size = 0.18
+
+[map]
+enabled = true
+x = 0.805
+y = 0.66
+size = 0.16
+
+[stats]
+enabled = true
+x = 0.255
+y = 0.72
+size = 0.32
+
+[colors]
+text = "#FFFFFF"
+shadow = "#091719"
+accent = "#D5F65B"
+ring = "#EDF3E9"
+low = "#28D7A1"
+mid = "#F7C548"
+high = "#F24C45"
+land = "#304544"
+park = "#3C5650"
+water = "#6B9FAD"
+building = "#506662"
+road = "#DBE4DD"
+road_edge = "#1D302F"
+route = "#D5F65B"
+
+[encoding]
+bitrate_scale = 1.0
+software_crf = 20
+software_preset = "fast"
+webm_crf = 30
+webm_cpu_used = 5
+filter_threads = 2
+
+[text_sizes]
+location = 1.0
+distance = 1.0
+elevation = 1.0
+coordinates = 1.0
+accuracy = 1.0

@@ -1,0 +1,12 @@
+/target/
+/output/
+/cache/
+/tmp/
+*.mp4
+*.mov
+*.webm
+*.mkv
+.DS_Store
+.env*
+*.pem
+*.key
