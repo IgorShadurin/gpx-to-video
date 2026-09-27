@@ -1,14 +1,14 @@
 # gpx-to-video
 
-**Your ride, drawn over your footage.** A local Rust tool that turns a timed GPX or CSV into a clean bicycle dashboard: speed, a moving map, road name, elevation, coordinates, and distance through the ride.
+**Fast telemetry overlays for your cycling videos.** Process action-camera footage, including 4K video, with synchronized speed, an OSM minimap, road names, elevation, and ride distance. Built in Rust with FFmpeg and hardware-accelerated encoding on macOS.
 
-Point it at a folder of action-camera videos. It matches each clip's capture time to the track, renders the relevant part, and writes new videos to another folder. Or export a transparent layer for your video editor.
+Pass a folder of videos plus a timed GPX or CSV recording. It matches each clip's capture time to your ride, draws the relevant telemetry, and saves new videos to your output folder while retaining the supported source resolution, frame rate, and codec family. Frames stream directly into the encoder without intermediate image files. For editing workflows, export a transparent overlay instead.
 
 | Before | With the bicycle layer |
 | --- | --- |
-| ![Synthetic park scene before](docs/before.jpg) | ![Russian bicycle dashboard over the synthetic park scene](docs/after-ru.jpg) |
+| ![Synthetic park scene before](docs/before.jpg) | ![English bicycle dashboard with an actual OpenStreetMap minimap](docs/after-en.jpg) |
 
-The landscape and ride above are synthetic demonstrations. The demo map is labeled as synthetic. Production maps use OpenStreetMap data ([actual OSM preview](docs/after-osm.jpg)). No personal recordings are included.
+The landscape and telemetry above are synthetic demonstrations; the minimap and nearby place name use actual cached OpenStreetMap data around London. Repository previews use English labels. No personal recordings are included.
 
 ## Start here
 
@@ -34,7 +34,7 @@ Use a separate output directory. Filenames and subdirectories are retained. Orig
 
 A `.csv` export from SpiderRoute works in the same command. A planned GPX without point timestamps cannot be synchronized.
 
-**Defaults:** Russian labels, bicycle theme, 15 telemetry updates per second, OSM zoom 15, and a 60 km/h gauge. With a source video, its dimensions and constant frame rate are retained. Without a source, the canvas is 3840 × 2160, 16:9. Language: `--language en`.
+**Defaults:** Russian labels, bicycle theme, 15 telemetry updates per second, OSM zoom 15, and a 60 km/h gauge. Coordinates are hidden; enable them in the studio or with `show_coordinates = true` in TOML. With a source video, its dimensions and constant frame rate are retained. Without a source, the canvas is 3840 × 2160, 16:9. Language: `--language en`.
 
 ## Set up the look before rendering
 
@@ -56,7 +56,7 @@ gpx-to-video render --config theme.toml \
   --route ride.gpx --video ./camera-clips --output ./finished-videos
 ```
 
-[Russian layer, transparent 4K PNG](docs/overlay-ru.png) · [English layer, transparent 4K PNG](docs/overlay-en.png) · [English composite](docs/after-en.jpg)
+[English OSM layer, transparent 4K PNG](docs/overlay-en.png) · [Full-size English OSM composite](docs/after-en.jpg)
 
 For every setting, generate a complete editable file:
 

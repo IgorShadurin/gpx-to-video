@@ -27,6 +27,10 @@ The default theme is **bicycle**. Keep the gauge's green-to-yellow-to-red arc, w
 
 All palette and widget positioning choices should flow through typed configuration. Keep sizes relative to the canvas; do not hard-code a 1080p raster and upscale it. Changing map colors must not invalidate or redownload the raw OSM geometry. Keep attribution legible. A demo map must be labeled as synthetic.
 
+Public README showcase images use English labels and actual OSM geometry, never the synthetic grid map. Generate them with `preview --language en --map-source osm` using cached public-area data and synthetic telemetry. Keep the fictional background/demo readings explicitly identified and OSM attribution visible. This presentation rule does not change the application's default language.
+
+Coordinates are hidden by default (`show_coordinates = false`). Keep the optional control available and ensure documentation previews follow the default.
+
 ## Correctness and performance rules
 
 - Match telemetry by UTC timestamp, never row number or file modification date. Require an explicit offset on manually supplied dates. Keep clock corrections in per-job configuration, not source code.

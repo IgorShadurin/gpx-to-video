@@ -5,6 +5,7 @@
 - `demo-background.png`: generated with the built-in ImageGen tool for this project, 2026-09-27. It depicts a fictional park, not a user's footage or private location. It is used only for documentation and synthetic test videos, never included in transparent layers. The generated image is upscaled for the 4K *video fixture*; gauge/text/map geometry are rendered natively at the requested output size.
 - All dashboard graphics are original configurable geometric drawing and font rendering. No game assets or reference screenshots are distributed.
 - OSM map data is fetched separately, cached outside git, and credited on the overlay. Map data © OpenStreetMap contributors, ODbL: https://www.openstreetmap.org/copyright.
+- The English README showcase (`docs/after-en.jpg`, also `docs/after-osm.jpg`) uses actual cached OSM geometry around London, with synthetic demo telemetry at 90 seconds. Regenerate the native transparent layer with `target/release/gpx-to-video preview --language en --map-source osm --output docs/overlay-en.png` (add `--cache` and `--offline` for an existing cache). Composite this over the generated background; keep the OSM credit visible. `docs/osm-overlay.png` is the same English layer.
 
 ## Demo background prompt
 

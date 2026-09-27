@@ -165,7 +165,7 @@ impl Default for Config {
                 y: 0.72,
                 size: 0.32,
             },
-            show_coordinates: true,
+            show_coordinates: false,
             show_elevation: true,
             show_distance: true,
             show_location: true,
